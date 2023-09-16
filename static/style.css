@@ -1,0 +1,21 @@
+body {
+    box-sizing: border-box;
+
+}
+
+.img-fluid {
+
+    width: 100px;
+    height: 100px;
+}
+
+.row {
+    box-sizing: border-box;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+}
