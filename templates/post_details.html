@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1> {{post.title}} </h1>
+
+<p> {{post.content}} </p>
+<p> By: {{post.user.first_name}} {{post.user.last_name}}</p>
+<p> on {{post.friendly_date}}</p>
+
+
+<form>
+    <button class="cancel" formmethod="GET" formaction="/"> Cancel </button>
+    <button class="edit" formmethod="GET" formaction="/post_details/{{post.id}}/edit_post"> Edit </button>
+    <button class="delete" formmethod="POST" formaction="/post_details/{{post.id}}/delete"> Delete </button>
+</form>
+
+{% endblock %}

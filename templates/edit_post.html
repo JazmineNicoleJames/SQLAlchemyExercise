@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<form action="/post_details/{{post.id}}/edit_post" method="POST">
+
+    <label for="title"> Title </label>
+    <input type="text" id="title" name="title" value="{{post.title}}">
+
+    <label for="content"> Content </label>
+    <input type="text" id="content" name="content" value="{{post.content}}">
+   
+    <button class="btn btn-success" type="submit"> Add </button>
+    <button formmethod="/users_details"> Cancel </button>
+</form>
+
+{% endblock %}

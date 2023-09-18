@@ -13,6 +13,18 @@
     <button formmethod="GET" class="edit" formaction="/user_details/{{ users.id }}/edit_user"> Edit </button>
     <button formmethod="POST" class="delete" formaction="/user_details/{{ users.id }}/delete_user"> Delete </button>
 </form>
+<h2> Posts </h2>
+<ul> 
+    {{title}}
+    {% for post in users.posts %}
+    <li>
+        <a href="/post_details/{{post.id}}">{{post.title}} </a></li>
+    {% endfor %}
+</ul>
+
+<form>
+    <button formaction="/user_details/{{users.id}}/posts"> Add post </button>
+</form>
 </div>
 
 {% endblock %}

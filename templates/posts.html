@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<form>
+
+    <label for="title"> Title </label>
+    <input class="form-control" type="text" id="title" name="title">
+
+    <label for="content"> Content </label>
+    <input type="text" id="content" name="content">
+
+    <button formmethod="GET" formaction="/user_details/{{users.id}}"> Cancel </button>
+    <button formmethod="POST" class="btn btn-success" type="submit"> Add </button>
+</form>
+
+{% endblock %}
