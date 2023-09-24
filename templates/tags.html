@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}   
+
+<h1> Tags </h1>
+<div class="tags_page">
+    <ul>
+    {% for tag in tags %}
+        <li> <a href="/tag/tag_details/{{tag.id}}"> {{tag.name}} </a></li>
+        {% endfor %}
+    </ul>
+</div>
+
+<div class="tags_reroutes">
+    <a href="/create_tag"> Create a new tag </a>
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="/"> Return to home</a>
+</div>
+{% endblock %}

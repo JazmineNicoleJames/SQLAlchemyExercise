@@ -1,7 +1,7 @@
 from app import app
 from unittest import TestCase
 from flask import Flask, request, redirect
-from models import User, Post
+from models import User, Post, Tag, PostTag
 from flask_sqlalchemy import SQLAlchemy
 app.config['TESTING'] = True
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql:///blogly' 
@@ -72,3 +72,28 @@ class BloglyTestCase(TestCase):
             self.assertEqual(response.status_code, 200)
 
         
+    def test_post_create_tag(self):
+        """ Test posting a newly created tag. """
+        with self.app as client:
+            tag_name = "Test Tag"
+    
+            response = client.post('/create_tag', data={'tag_name': tag_name})
+
+            assert response.status_code == 302
+
+            created_tag = Tag.query.filter_by(name=tag_name).first()
+            assert created_tag is not None
+
+
+    def test_get_tag_details(self):
+        """ Test getting tag details. """
+        with self.app as client:
+            tag = Tag(name="Test Tag")
+            post = Post(title="Test Post", content="Test content")
+            db.session.add(tag)
+            db.session.add(post)
+            db.session.commit()
+
+            response = client.get(f'/tag/tag_details/{tag.id}')
+            assert response.status_code == 200
+    

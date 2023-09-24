@@ -19,3 +19,29 @@ input {
     width: 100%;
     padding: 10px;
 }
+
+.tags_page {
+    text-align: center;
+    width: fit-content;
+}
+
+.tags_reroutes {
+    color: white;
+    background-color:tan;
+    text-align: center;
+    padding: 10px;
+    text-transform: uppercase;   
+}
+
+.form-check-label, .form-check {
+    align-content: center;
+    text-transform: capitalize;
+    width: 30%;
+    vertical-align: middle;
+    display: inline-block;
+
+}
+
+.post_form {
+    padding: 20px;
+}

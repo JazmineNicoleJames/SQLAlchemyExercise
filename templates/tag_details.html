@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<a href="/"> Return home </a>
+<h1>{{tag_id.name}}</h1>
+
+Posts with the same tag:
+<ul>
+    {% for info in tag_id.posts %}
+    <li><a href="/post_details/{{info.id}}">{{info.title}} </a></li>
+</ul>
+
+
+
+{% endfor %}  
+{% endblock %}
